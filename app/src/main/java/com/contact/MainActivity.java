@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.contact.adapter.ContactAdapter;
 import com.contact.api.AndroidHiveInfoAPI;
 import com.contact.api.ContactAPI;
 import com.contact.model.Contact;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            ListAdapter adapter = new ArrayAdapter<Contact>(MainActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, contacts );
+            ContactAdapter adapter = new ContactAdapter(MainActivity.this, contacts);
             lv.setAdapter(adapter);
         }
     }
